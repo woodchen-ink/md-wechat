@@ -24,13 +24,14 @@ const defaultTheme: Theme = {
     // 二级标题
     h2: {
       'display': `table`,
-      'padding': `0 0.2em`,
+      'padding': `0 0.5em`,
       'margin': `4em auto 2em`,
       'color': `#fff`,
       'background': `var(--md-primary-color)`,
       'font-size': `1.2em`,
       'font-weight': `bold`,
       'text-align': `center`,
+      'border-radius': `4px`,
     },
 
     // 三级标题

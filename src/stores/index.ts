@@ -17,7 +17,7 @@ export const useStore = defineStore(`store`, () => {
   const toggleDark = useToggle(isDark)
 
   // 是否开启 Mac 代码块
-  const isMacCodeBlock = useStorage(`isMacCodeBlock`, true)
+  const isMacCodeBlock = useStorage(`isMacCodeBlock`, false)
   const toggleMacCodeBlock = useToggle(isMacCodeBlock)
 
   // 是否在左侧编辑
@@ -25,7 +25,7 @@ export const useStore = defineStore(`store`, () => {
   const toggleEditOnLeft = useToggle(isEditOnLeft)
 
   // 是否开启微信外链接底部引用
-  const isCiteStatus = useStorage(`isCiteStatus`, false)
+  const isCiteStatus = useStorage(`isCiteStatus`, true)
   const toggleCiteStatus = useToggle(isCiteStatus)
 
   // 是否开启段落首行缩进
