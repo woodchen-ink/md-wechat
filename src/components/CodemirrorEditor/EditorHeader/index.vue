@@ -121,29 +121,12 @@
           <el-dropdown-item class="padding-left-3" @click.native="customStyle">
             自定义 CSS
           </el-dropdown-item>
-          <el-dropdown-item divided @click.native="codeBlockChanged">
-            <i
-              class="el-icon-check"
-              :style="{ opacity: isMacCodeBlock ? 1 : 0 }"
-            ></i>
-            Mac 代码块
-          </el-dropdown-item>
           <el-dropdown-item
             divided
             class="padding-left-3"
             @click.native="showResetConfirm = true"
           >
             重置
-          </el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
-      <el-dropdown>
-        <span class="el-dropdown-link">
-          帮助<i class="el-icon-arrow-down el-icon--right"></i>
-        </span>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item @click.native="$emit('show-about-dialog')">
-            关于
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -187,7 +170,6 @@ export default {
     return {
       config,
       citeStatus: false,
-      isMacCodeBlock: true,
       showResetConfirm: false,
       selectFont: ``,
       selectSize: ``,
@@ -248,7 +230,6 @@ export default {
       codeTheme: (state) => state.codeTheme,
       nightMode: (state) => state.nightMode,
       currentCiteStatus: (state) => state.citeStatus,
-      currentIsMacCodeBlock: (state) => state.isMacCodeBlock,
     }),
   },
   methods: {
@@ -328,11 +309,6 @@ export default {
       this.setCiteStatus(this.citeStatus)
       this.$emit(`refresh`)
     },
-    codeBlockChanged() {
-      this.isMacCodeBlock = !this.isMacCodeBlock
-      this.setIsMacCodeBlock(this.isMacCodeBlock)
-      this.$emit(`refresh`)
-    },
     // 复制到微信公众号
     copy() {
       this.$emit(`startCopy`)
@@ -351,12 +327,6 @@ export default {
           // 公众号不支持 position， 转换为等价的 translateY
           .replace(/top:(.*?)em/g, `transform: translateY($1em)`)
 
-        if (this.isMacCodeBlock) {
-          clipboardDiv.innerHTML = clipboardDiv.innerHTML.replaceAll(
-            /(<code class="prettyprint[^>]*)(style=")/g,
-            `$1style="font-family: Menlo, 'Operator Mono', Consolas, Monaco, monospace;`
-          )
-        }
         clipboardDiv.focus()
         window.getSelection().removeAllRanges()
         let range = document.createRange()
@@ -412,8 +382,6 @@ export default {
       this.selectSize = this.currentSize
       this.selectColor = this.currentColor
       this.selectCodeTheme = this.codeTheme
-
-      this.isMacCodeBlock = false
       this.codeBlockChanged()
     },
     cancelReset() {
@@ -429,7 +397,6 @@ export default {
       `setCssEditorValue`,
       `setCurrentCodeTheme`,
       `setWxRendererOptions`,
-      `setIsMacCodeBlock`,
     ]),
   },
   mounted() {
@@ -438,7 +405,6 @@ export default {
     this.selectColor = this.currentColor
     this.selectCodeTheme = this.codeTheme
     this.citeStatus = this.currentCiteStatus
-    this.isMacCodeBlock = this.currentIsMacCodeBlock
 
     const fileInput = this.$refs.fileInput
     fileInput.onchange = () => {

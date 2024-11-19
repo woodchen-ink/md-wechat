@@ -4,7 +4,6 @@
   "private": false,
   "scripts": {
     "release:cli": "node ./bin/release.js",
-    "prepare": "husky install",
     "lint": "vue-cli-service lint src",
     "start": "npm run lint -- --fix && run-p serve",
     "serve": "vue-cli-service serve",

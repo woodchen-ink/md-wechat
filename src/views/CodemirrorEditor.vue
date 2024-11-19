@@ -12,7 +12,6 @@
           @download="downloadEditorContent"
           @export="exportEditorContent"
           @showCssEditor="showCssEditor = !showCssEditor"
-          @show-about-dialog="aboutDialogVisible = true"
           @show-dialog-form="insertFormDialogVisible = true"
           @show-dialog-upload-img="dialogUploadImgVisible = true"
           @startCopy=";(isCoping = true), (backLight = true)"
@@ -69,10 +68,6 @@
       @uploadImage="uploadImage"
       @uploaded="uploaded"
     ></upload-img-dialog>
-    <about-dialog
-      :visible="aboutDialogVisible"
-      @close="aboutDialogVisible = false"
-    ></about-dialog>
     <insert-form-dialog
       :visible="insertFormDialogVisible"
       @close="insertFormDialogVisible = false"
@@ -94,7 +89,6 @@ import { mapState, mapActions } from 'pinia'
 import { useStore } from '@/stores'
 
 import EditorHeader from '@/components/CodemirrorEditor/EditorHeader/index'
-import AboutDialog from '@/components/CodemirrorEditor/AboutDialog'
 import InsertFormDialog from '@/components/CodemirrorEditor/InsertFormDialog'
 import RightClickMenu from '@/components/CodemirrorEditor/RightClickMenu'
 import UploadImgDialog from '@/components/CodemirrorEditor/UploadImgDialog'
@@ -120,7 +114,6 @@ export default {
   data() {
     return {
       showCssEditor: false,
-      aboutDialogVisible: false,
       dialogUploadImgVisible: false,
       insertFormDialogVisible: false,
       isCoping: false,
@@ -138,7 +131,6 @@ export default {
     CssEditor,
     RunLoading,
     EditorHeader,
-    AboutDialog,
     InsertFormDialog,
     RightClickMenu,
     UploadImgDialog,
