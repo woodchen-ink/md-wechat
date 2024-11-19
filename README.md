@@ -8,22 +8,20 @@
 
 <div align="center">
 
-[![sync status](https://github.com/doocs/md/workflows/Sync/badge.svg)](https://github.com/doocs/md/actions) [![deploy status](https://github.com/doocs/md/workflows/Build%20and%20Deploy/badge.svg)](https://github.com/doocs/md/actions) [![prettier status](https://github.com/doocs/md/workflows/Prettier/badge.svg)](https://github.com/doocs/md/actions) [![users](https://badgen.net/badge/Who's/using/green)](#谁在使用) [![PRs Welcome](https://badgen.net/badge/PRs/welcome/green)](../../pulls)<br> [![github](https://badgen.net/badge/⭐/GitHub/blue)](https://github.com/doocs/md) [![gitee](https://badgen.net/badge/⭐/Gitee/blue)](https://gitee.com/doocs/md) [![license](https://badgen.net/github/license/doocs/md)](./LICENSE) [![release](https://img.shields.io/github/v/release/doocs/md.svg)](../../releases)
+[![status](https://img.shields.io/github/actions/workflow/status/doocs/md/build.yml?style=flat-square&labelColor=564341&color=42cc23)](https://github.com/doocs/md/actions) [![node](https://img.shields.io/badge/node-%3E%3D20-42cc23?style=flat-square&labelColor=564341)](https://nodejs.org/en/about/previous-releases) [![release](https://img.shields.io/github/v/release/doocs/md?style=flat-square&labelColor=564341&color=42cc23)](https://github.com/doocs/md/releases) [![license](https://img.shields.io/github/license/doocs/md?style=flat-square&labelColor=564341&color=42cc23)](./LICENSE) [![pr](https://img.shields.io/badge/prs-welcome-42cc23?style=flat-square&labelColor=564341)](https://github.com/doocs/md/pulls)<br>[![stars](https://img.shields.io/github/stars/doocs/md?style=flat-square&labelColor=564341&color=42cc23)](https://github.com/doocs/md/stargazers) [![forks](https://img.shields.io/github/forks/doocs/md?style=flat-square&labelColor=564341&color=42cc23)](https://github.com/doocs/md)
 
 </div>
 
 ## 项目介绍
 
-> 本项目基于 [wechat-format](https://github.com/lyricat/wechat-format) 进行二次开发，感谢 [lyricat](https://github.com/lyricat) 的创意和贡献！
-
 Markdown 文档自动即时渲染为微信图文，让你不再为微信文章排版而发愁！只要你会基本的 Markdown 语法，就能做出一篇样式简洁而又美观大方的微信图文。
 
 ## 在线编辑器地址
 
-- Gitee Pages：https://doocs.gitee.io/md
-- GitHub Pages：https://doocs.github.io/md
+- [https://doocs.github.io/md](https://doocs.github.io/md)
+- [https://doocs-md.pages.dev](https://doocs-md.pages.dev)
 
-注：推荐使用 Chrome 浏览器，效果最佳。另外，对于国内（中国）的朋友，访问 [Gitee Pages](https://doocs.gitee.io/md) 速度会相对快一些。
+注：推荐使用 Chrome 浏览器，效果最佳。
 
 ## 为何二次开发
 
@@ -31,12 +29,14 @@ Markdown 文档自动即时渲染为微信图文，让你不再为微信文章�
 
 欢迎各位朋友随时提交 PR，让这款微信 Markdown 编辑器变得更好！如果你有新的想法，也欢迎在 [Discussions 讨论区](https://github.com/doocs/md/discussions)反馈。
 
+注：我们项目最新版本基于 Vue3 开发，基于 Vue2 的旧版本已经不再维护，如果你需要 Vue2 版本，请切换到 [1.x](https://github.com/doocs/md/tree/1.x) 分支。
+
 ## 功能特性
 
 - [x] 支持自定义 CSS 样式
-- [x] 支持 Markdown 所有基础语法
-- [x] 支持浅色、暗黑两种主题模式
-- [x] 支持 <kbd>Ctrl</kbd> + <kbd>F</kbd> 快速格式化文档
+- [x] 支持 Markdown 所有基础语法、代码块、LaTeX 公式
+- [x] 支持浅色、深色两种编辑器外观
+- [x] 支持 <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> 快速格式化文档
 - [x] 支持色盘取色，快速替换文章整体色调
 - [x] 支持多图上传，可自定义配置图床
 - [x] 支持自定义上传逻辑
@@ -55,13 +55,13 @@ Markdown 文档自动即时渲染为微信图文，让你不再为微信文章�
 | 6   | [MinIO](https://min.io/)                        | 配置 `Endpoint`、`Port`、`UseSSL`、`Bucket`、`AccessKey`、`SecretKey` 参数 | [如何使用 MinIO？](http://docs.minio.org.cn/docs/master/minio-client-complete-guide)                                   |
 | 7   | 自定义上传                                      | 是                                                                         | [如何自定义上传？](#自定义上传逻辑)                                                                                    |
 
-![select-and-change-color-theme](https://doocs.oss-cn-shenzhen.aliyuncs.com/img//1606034542281-a8c99fa7-c11e-4e43-98da-e36012f54dc8.gif)
+![demo1](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/md/images/demo1.gif)
 
-![copy-and-paste](https://doocs.oss-cn-shenzhen.aliyuncs.com/img//1606034542372-59707c83-2caf-4a96-9bb6-c4effaecf731.gif)
+![demo2](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/md/images/demo2.gif)
 
-![custom](https://doocs.oss-cn-shenzhen.aliyuncs.com/img//1606034542180-4d1c48b1-75f6-4794-95f7-e3b877c2b6a2.gif)
+![demo3](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/md/images/demo3.gif)
 
-![doocs-md-upload-image](https://doocs.oss-cn-shenzhen.aliyuncs.com/img//1606034542512-0769a336-b9eb-4d58-83c1-29db7b54f71b.gif)
+![demo4](https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/md/images/demo4.gif)
 
 ## 注意事项
 
@@ -77,19 +77,19 @@ Markdown 文档自动即时渲染为微信图文，让你不再为微信文章�
 示例代码：
 
 ```js
-const { file, util, okCb, errCb } = CUSTOM_ARG;
-const param = new FormData();
-param.append("file", file);
+const { file, util, okCb, errCb } = CUSTOM_ARG
+const param = new FormData()
+param.append(`file`, file)
 util.axios
-  .post("http://127.0.0.1:9000/upload", param, {
-    headers: { "Content-Type": "multipart/form-data" },
+  .post(`http://127.0.0.1:9000/upload`, param, {
+    headers: { 'Content-Type': `multipart/form-data` },
   })
   .then((res) => {
-    okCb(res.url);
+    okCb(res.url)
   })
   .catch((err) => {
-    errCb(err);
-  });
+    errCb(err)
+  })
 
 // 提供的可用参数:
 // CUSTOM_ARG = {
@@ -98,7 +98,7 @@ util.axios
 //   util: {
 //     axios, // axios 实例
 //     CryptoJS, // 加密库
-//     OSS, // ali-oss
+//     OSS, // tiny-oss
 //     COS, // cos-js-sdk-v5
 //     Buffer, // buffer-from
 //     uuidv4, // uuid
