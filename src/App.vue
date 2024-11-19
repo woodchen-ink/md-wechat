@@ -1,22 +1,24 @@
-<template>
-  <div id="app">
-    <codemirror-editor />
-  </div>
-</template>
-
-<script setup>
+<script setup lang="ts">
 import CodemirrorEditor from '@/views/CodemirrorEditor.vue'
 </script>
 
+<template>
+  <CodemirrorEditor />
+</template>
+
 <style lang="less">
-// 仿 uniapp 外层全屏
 html,
 body,
 #app {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
+}
+
+// 抵消下拉菜单开启时带来的样式
+body {
+  pointer-events: initial !important;
 }
 
 ::-webkit-scrollbar {
@@ -50,7 +52,9 @@ body,
 
   color: #333333;
   background-color: #ffffff;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px 0 rgba(0, 0, 0, 0.08);
 }
 
 .CodeMirror-hint {
@@ -67,5 +71,15 @@ body,
   &:hover {
     background: #f0f0f0;
   }
+}
+
+// 修复分栏线负数 margin 导致的轴向滚动条
+.el-dropdown-menu__item--divided:before {
+  margin: 0;
+}
+
+// 修复颜色选择器下拉箭头位置
+.el-icon.el-color-picker__icon.is-icon-arrow-down {
+  position: absolute;
 }
 </style>
